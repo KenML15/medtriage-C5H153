@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "C5h153Application",
+            "request": "launch",
+            "mainClass": "com.medtriage.C5h153Application",
+            "projectName": "c5h153"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-C5h153Application<c5h153>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.c5h153.C5h153Application",
+            "projectName": "c5h153",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51805 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=c5h153"
+        }
+    ]
+}
