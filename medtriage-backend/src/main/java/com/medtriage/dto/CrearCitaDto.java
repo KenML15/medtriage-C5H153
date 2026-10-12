@@ -3,7 +3,7 @@ package com.medtriage.dto;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class CrearCitaDto {
+public class CrearCitaDTO {
 
     private Long pacienteId;
     private Long doctorId;
@@ -12,10 +12,10 @@ public class CrearCitaDto {
     private BigDecimal montoConsulta;
     private LocalDateTime fechaCita;
 
-    public CrearCitaDto() {
+    public CrearCitaDTO() {
     }
 
-    public CrearCitaDto(
+    public CrearCitaDTO(
             Long pacienteId,
             Long doctorId,
             String nivelPrioridad,
@@ -78,4 +78,6 @@ public class CrearCitaDto {
     public void setFechaCita(LocalDateTime fechaCita) {
         this.fechaCita = fechaCita;
     }
+
+    
 }

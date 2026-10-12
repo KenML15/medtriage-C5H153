@@ -27,7 +27,7 @@ public class Doctor {
     private String especialidad;
 
     @Column(name = "disponible", nullable = false)
-    private Boolean disponible = true;
+    private Boolean disponiBoolean = true;
 
     @OneToMany(mappedBy = "doctor")
     private List<CitaMedica> citasMedicas = new ArrayList<>();
@@ -38,11 +38,11 @@ public class Doctor {
     public Doctor(
             String nombre,
             String especialidad,
-            Boolean disponible
+            Boolean disponiBoolean
     ) {
         this.nombre = nombre;
         this.especialidad = especialidad;
-        this.disponible = disponible;
+        this.disponiBoolean = disponiBoolean;
     }
 
     public Long getId() {
@@ -70,11 +70,11 @@ public class Doctor {
     }
 
     public Boolean getDisponible() {
-        return disponible;
+        return disponiBoolean;
     }
 
     public void setDisponible(Boolean disponible) {
-        this.disponible = disponible;
+        this.disponiBoolean = disponible;
     }
 
     public List<CitaMedica> getCitasMedicas() {
