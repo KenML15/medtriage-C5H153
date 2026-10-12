@@ -21,8 +21,7 @@ public class CrearCitaDTO {
             String nivelPrioridad,
             String motivoConsulta,
             BigDecimal montoConsulta,
-            LocalDateTime fechaCita
-    ) {
+            LocalDateTime fechaCita) {
         this.pacienteId = pacienteId;
         this.doctorId = doctorId;
         this.nivelPrioridad = nivelPrioridad;
@@ -79,5 +78,4 @@ public class CrearCitaDTO {
         this.fechaCita = fechaCita;
     }
 
-    
 }

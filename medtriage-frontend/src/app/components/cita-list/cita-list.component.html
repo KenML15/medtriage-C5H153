@@ -1,0 +1,112 @@
+<section class="dashboard">
+
+  <div class="encabezado">
+    <div>
+      <h1>Citas médicas</h1>
+      <p>Dashboard de MedTriage Express</p>
+    </div>
+
+    <button
+      type="button"
+      class="btn-recargar"
+      (click)="cargarCitas()">
+      Recargar
+    </button>
+  </div>
+
+  <div class="filtros">
+    <span>Filtrar por prioridad:</span>
+
+    @for (prioridad of prioridades; track prioridad) {
+      <button
+        type="button"
+        class="btn-filtro"
+        [class.activo]="prioridadSeleccionada() === prioridad"
+        (click)="seleccionarPrioridad(prioridad)">
+        {{ prioridad }}
+      </button>
+    }
+  </div>
+
+  @if (cargando()) {
+    <p class="mensaje">Cargando citas...</p>
+  }
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  @if (!cargando() && citasFiltradas().length === 0) {
+    <p class="mensaje">
+      No hay citas para la prioridad seleccionada.
+    </p>
+  }
+
+  @if (!cargando() && citasFiltradas().length > 0) {
+    <div class="tabla-contenedor">
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Paciente</th>
+            <th>Doctor</th>
+            <th>Prioridad</th>
+            <th>Motivo</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (cita of citasFiltradas(); track cita.id) {
+            <tr>
+              <td>{{ cita.codigoCita }}</td>
+              <td>{{ cita.pacienteNombre }}</td>
+              <td>{{ cita.doctorNombre }}</td>
+              <td>
+                <span
+                  class="badge prioridad"
+                  [class.prioridad-alta]="
+                    cita.nivelPrioridad === 'ALTA'
+                  "
+                  [class.prioridad-media]="
+                    cita.nivelPrioridad === 'MEDIA'
+                  "
+                  [class.prioridad-baja]="
+                    cita.nivelPrioridad === 'BAJA'
+                  ">
+                  {{ cita.nivelPrioridad }}
+                </span>
+              </td>
+              <td>{{ cita.motivoConsulta }}</td>
+              <td>
+                {{ cita.fechaCita | date:'dd/MM/yyyy HH:mm' }}
+              </td>
+              <td>
+                <span
+                  class="badge"
+                  [class]="claseEstado(cita.estado)">
+                  {{ formatearEstado(cita.estado) }}
+                </span>
+              </td>
+              <td>
+                @if (puedeAvanzarEstado(cita.estado)) {
+                  <button
+                    type="button"
+                    class="btn-estado"
+                    (click)="avanzarEstado(cita)">
+                    Avanzar estado
+                  </button>
+                } @else {
+                  <span class="sin-accion">Finalizada</span>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+
+</section>

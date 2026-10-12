@@ -34,8 +34,7 @@ public class CitaMedicaDTO {
             String motivoConsulta,
             String estado,
             BigDecimal montoConsulta,
-            LocalDateTime fechaCita
-    ) {
+            LocalDateTime fechaCita) {
         this.id = id;
         this.codigoCita = codigoCita;
         this.pacienteId = pacienteId;

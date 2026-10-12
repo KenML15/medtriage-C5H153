@@ -1,0 +1,36 @@
+.form-container {
+  max-width: 700px;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input,
+select,
+textarea {
+  padding: 7px;
+  border: 1px solid #999999;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.mensaje {
+  color: green;
+  margin-top: 15px;
+}

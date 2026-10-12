@@ -58,8 +58,7 @@ public class CitaMedica {
             String motivoConsulta,
             String estado,
             BigDecimal montoConsulta,
-            LocalDateTime fechaCita
-    ) {
+            LocalDateTime fechaCita) {
         this.codigoCita = codigoCita;
         this.paciente = paciente;
         this.doctor = doctor;

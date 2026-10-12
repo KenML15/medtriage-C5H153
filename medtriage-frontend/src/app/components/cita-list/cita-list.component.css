@@ -1,0 +1,85 @@
+.dashboard {
+  padding: 20px;
+}
+
+.encabezado {
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+button {
+  padding: 6px 10px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.btn-filtro.activo {
+  font-weight: bold;
+  background-color: #dddddd;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #cccccc;
+  text-align: left;
+}
+
+th {
+  background-color: #eeeeee;
+}
+
+.badge {
+  padding: 3px 6px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+}
+
+.prioridad-alta {
+  background-color: #ffcccc;
+}
+
+.prioridad-media {
+  background-color: #fff0b3;
+}
+
+.prioridad-baja {
+  background-color: #ccffcc;
+}
+
+.estado-pendiente {
+  background-color: #ddddff;
+}
+
+.estado-en-atencion {
+  background-color: #fff0b3;
+}
+
+.estado-atendida {
+  background-color: #ccffcc;
+}
+
+.estado-cancelada {
+  background-color: #ffcccc;
+}
+
+.error {
+  color: red;
+}
+
+.mensaje {
+  margin: 15px 0;
+}

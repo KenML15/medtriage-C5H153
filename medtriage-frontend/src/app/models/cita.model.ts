@@ -16,13 +16,10 @@ export interface Paciente {
 export interface CitaMedica {
   id: number;
   codigoCita: string;
-
   pacienteId: number;
   pacienteNombre: string;
-
   doctorId: number;
   doctorNombre: string;
-
   nivelPrioridad: string;
   motivoConsulta: string;
   estado: string;
